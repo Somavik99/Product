@@ -1,6 +1,8 @@
+@import url('https://fonts.googleapis.com/css2?family=Comfortaa&family=Montserrat&family=Nunito+Sans:wght@300&family=Sofia+Sans:wght@500&family=Ubuntu:wght@500&display=swap');
 *{
     margin: 0;
      padding: 0;
+     font-family: 'Comfortaa', cursive;
 }
 
 #header{
@@ -20,34 +22,79 @@ position: relative;
 display: grid;
 justify-content: center;
 align-items: center;
+grid-template-rows: repeat(4,1fr);
 grid-template-columns: repeat(4,1fr);
 margin: 15px;
+
+}
+
+.prod_contain{
+    background: #35bdb2;
+    box-sizing: border-box;
+    outline: none;
+    border: 2px solid  #001e3c;
+    margin: 5px;
+    padding: 5px;
+    max-width: fit-content;
+    min-width: fit-content;
+    border-radius: 15px;
+    transition: all 0.1s ease-out;
+}
+
+.prod_contain:hover{
+transform: scale(1);
+background: #001e3c;
+border: 2px solid whitesmoke;
 }
 
 .prod_img{
     width: 300px;
     height: 200px;
     box-sizing: border-box;
-    border: none;
+    border: 2px solid #457fdd;;
     outline: none;
-    margin: 2px;
-    padding: 2px;
+    /* margin: 2px;
+    padding: 2px; */
     border-radius: 50px;
     transition: all 0.1s ease-in-out;
 }
 
 .prod_img:hover{
-   
+   border-radius: 20px;
     cursor: pointer;
     box-sizing: border-box;
-    box-shadow: 8px 8px 8px 8px  #52a39d;
+    box-shadow: 1px 1px 1px 1px   rgb(170, 184, 184);
+}
+
+.prod_title{
+    background: inherit;
+}
+
+.prod_btn{
+    box-sizing: border-box;
+    outline: none;
+    border: 2px solid #021027;
+    border-radius: 50px ;
 }
 
 .btn{
+   
     background: inherit;
     color: black;
 }
 .icon{
     background: inherit;
     color: black;
+}
+
+@media screen and (max-width:600px) {
+    .prod_contain{
+       min-width: 100px;
+        min-height: 100px;
+    }
+
+    #header{
+min-width: 100px;
+min-height: 100px;
+    }
 }
