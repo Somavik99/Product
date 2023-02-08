@@ -32,7 +32,7 @@ const Home = () => {
               <img src={val.thumbnail} className="prod_img" alt="err" />
               {/* <>{val.id}</> */}
               <p className="prod_title">{val.title}</p>
-              <PageMod />
+              <PageMod image={val.thumbnail} description = {val.description} title={val.title} price={val.price}  />
               <Button animated>
                 <Button.Content visible className="btn">
                   Cart

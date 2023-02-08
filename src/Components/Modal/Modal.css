@@ -1,0 +1,27 @@
+.image{
+    width:fit-content;
+    height:fit-content;
+    display: flex;
+    justify-content: center;
+    align-items: self-start;
+}
+
+.para{
+    background: inherit;
+    color: black;
+}
+
+.des{
+    background: inherit;
+    
+    
+}
+
+.List{
+    background: white;
+    color: rgb(31, 255, 19);
+}
+.List1{
+    background: white;
+    color: rgb(251, 5, 5);
+}

@@ -1,7 +1,9 @@
 import axios from "axios";
 import React, { useState } from "react";
 import { Button, Image, Modal, Icon, List } from "semantic-ui-react";
-const PageMod = ({id}) => {
+import "./Modal.css"
+const PageMod = (props) => {
+  const { description, image, title, price } = props;
   const [open, setOpen] = React.useState(false);
   const [ModState, setModState] = useState({
     brand: "",
@@ -13,11 +15,12 @@ const PageMod = ({id}) => {
     await axios
       .get(`https://dummyjson.com/products`)
       .then((respo) => {
-        console.log(respo.data.products)
-        setModState(respo.data.products);
+        // console.log(respo.data.products);
+        setModState(respo.data.product);
       })
       .catch((err) => {
         console.log(err);
+        ModState(err);
       });
   };
 
@@ -37,25 +40,23 @@ const PageMod = ({id}) => {
         </Button>
       }
     >
-     
-        <Modal.Header>Product Details</Modal.Header>
-        <Modal.Content image>
-          <Image size="medium" src={ModState.thumbnail[id]} wrapped />
-          <Modal.Description>
-            <p>{ModState.brand[id]}</p>
-            <List>
-              <List.Item>{ModState.title[id]}</List.Item>
-              <List.Item>{ModState.price[id]}</List.Item>
-            </List>
-          </Modal.Description>
-        </Modal.Content>
-        <Modal.Actions>
-          <Button onClick={() => setOpen(false)}>Cancel</Button>
-          <Button onClick={() => setOpen(false)} positive>
-            Ok
-          </Button>
-        </Modal.Actions>
-    
+      <Modal.Header>Product Details</Modal.Header>
+      <Modal.Content image className="image">
+        <Image size="large" src={image} wrapped />
+        <Modal.Description className="des">
+        </Modal.Description>
+      </Modal.Content>
+      <List >
+        <List.Item className="List">Name: {title}</List.Item>
+        <List.Item className="List1">Price: ${price}</List.Item>
+      </List>
+          <p className="para">{description}</p>
+      <Modal.Actions>
+        <Button onClick={() => setOpen(false)}>Cancel</Button>
+        <Button onClick={() => setOpen(false)} positive>
+          Ok
+        </Button>
+      </Modal.Actions>
     </Modal>
   );
 };
