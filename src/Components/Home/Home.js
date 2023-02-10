@@ -1,11 +1,15 @@
+// import { createStaticHandler } from "@remix-run/router";
 import axios from "axios";
 import React, { useEffect, useState } from "react";
-import { Button, Icon } from "semantic-ui-react";
-import PageMod from "../Modal/Modal";
+import { useNavigate } from "react-router-dom";
+
+import Cards from "../Cards/Cards";
+
 
 import "./Home.css";
-const Home = () => {
+const Home = ({ handleClick }) => {
   const [ProductsHome, setProductsHome] = useState([]);
+  const navigate = useNavigate();
   const productHandler = async () => {
     await axios
       .get("https://dummyjson.com/products")
@@ -20,27 +24,22 @@ const Home = () => {
     productHandler();
   }, []);
 
-
-
   return (
     <div>
-      <h1 id="header">🛒Product's Home🛒</h1>
       <span className="prod">
         {ProductsHome.map((val, index) => {
           return (
             <div key={index} className="prod_contain">
-              <img src={val.thumbnail} className="prod_img" alt="err" />
               {/* <>{val.id}</> */}
-              <p className="prod_title">{val.title}</p>
-              <PageMod image={val.thumbnail} description = {val.description} title={val.title} price={val.price}  />
-              <Button animated>
-                <Button.Content visible className="btn">
-                  Cart
-                </Button.Content>
-                <Button.Content hidden className="icon">
-                  <Icon name="shopping cart" />
-                </Button.Content>
-              </Button>
+
+              <Cards
+                image={val.thumbnail}
+                title={val.title}
+                price={val.price}
+                description={val.description}
+                handleClick={handleClick}
+              />
+             
             </div>
           );
         })}

@@ -1,0 +1,31 @@
+* {
+  margin: 10px;
+  padding: 5px;
+  font-size: 15px;
+}
+
+.card_contain {
+
+  margin-top: 15px;
+}
+
+.card_contain:hover{
+    cursor: pointer;
+}
+
+.card_para {
+  background: inherit;
+  color: black;
+}
+
+.prod_img {
+  width: inherit;
+  height: 200px;
+  box-sizing: border-box;
+  /* border: 2px solid #457fdd; */
+  outline: none;
+  /* margin: 2px;
+    padding: 2px; */
+  border-radius: 50px;
+  transition: all 0.1s ease-in-out;
+}

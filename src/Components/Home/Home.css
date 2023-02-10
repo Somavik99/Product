@@ -5,30 +5,20 @@
      font-family: 'Comfortaa', cursive;
 }
 
-#header{
-display: flex;
-justify-content: center;
-align-items: center;
-font-size: 50px;
-box-sizing: border-box;
-outline: none;
-border: 2px solid;
-border-color:  azure;
-background: #001e3c ;
-}
+
 
 .prod{
-position: relative;
-display: grid;
-justify-content: center;
-align-items: center;
-grid-template-rows: repeat(4,1fr);
-grid-template-columns: repeat(4,1fr);
-margin: 15px;
-
+    position: relative;
+    display: grid;
+    justify-content: center;
+    align-items: center;
+    grid-template-rows: repeat(4,1fr);
+    grid-template-columns: repeat(4,1fr);
+    margin: 15px;
+    
 }
 
-.prod_contain{
+/* .prod_contain{
     background: #35bdb2;
     box-sizing: border-box;
     outline: none;
@@ -39,25 +29,15 @@ margin: 15px;
     min-width: fit-content;
     border-radius: 15px;
     transition: all 0.1s ease-out;
-}
+} */
 
-.prod_contain:hover{
+/* .prod_contain:hover{
 transform: scale(1);
 background: #001e3c;
 border: 2px solid whitesmoke;
-}
+} */
 
-.prod_img{
-    width: 300px;
-    height: 200px;
-    box-sizing: border-box;
-    border: 2px solid #457fdd;;
-    outline: none;
-    /* margin: 2px;
-    padding: 2px; */
-    border-radius: 50px;
-    transition: all 0.1s ease-in-out;
-}
+
 
 .prod_img:hover{
    border-radius: 20px;

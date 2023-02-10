@@ -1,0 +1,18 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+.nav_cell{
+    display: flex; 
+    justify-content:left;
+    align-items: self-start;
+    margin: 5px;
+    padding: 2px;
+}
+
+.nav_icon{
+display: flex;
+justify-content: flex-end;
+align-items: flex-end;
+}
