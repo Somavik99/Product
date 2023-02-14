@@ -3,19 +3,20 @@ import { Card, Icon } from "semantic-ui-react";
 import { Button } from "semantic-ui-react";
 import PageMod from "../Modal/Modal";
 import "./Cards.css";
-const Cards = ({ image, description, price, title, handleClick, item }) => {
+
+const Cards = ({ image, description, price, title, data, handleClick }) => {
   return (
     <Card className="card_contain">
-      <img src={image} className="prod_img" alt="err" />
+      <img src={image} className="card_img" alt={title} />
       <Card.Content>
-       <p className="card_para">{title}</p>
+        <p className="card_para">{title}</p>
         <PageMod
           image={image}
           description={description}
           title={title}
           price={price}
         />
-        <Button animated onClick={() => handleClick(item)}>
+        <Button animated onClick={() => handleClick(data)}>
           <Button.Content visible className="btn">
             Cart
           </Button.Content>

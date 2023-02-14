@@ -1,17 +1,20 @@
 import React from "react";
 import { Icon } from "semantic-ui-react";
+import { useNavigate } from "react-router-dom";
 import "./NavBar.css";
 const NavBar = ({ size }) => {
+  const navigate = useNavigate();
+  const GoCart = () => {
+    navigate("/Cart");
+  };
   return (
     <div className="nav_cell">
-      <h1 id="header" style={{ color: "black" }}>
-        🛒Product's Home🛒
-      </h1>
+      <h1 id="header">🛒Shoper's Home🛒</h1>
       <div>
-        <span>
+        <span onClick={GoCart}>
           <Icon name="add to cart" size="big" className="nav_icon" />
         </span>
-        <span color="red">{size}</span>
+        <span style={{color:"red"}}>{size}</span>
       </div>
     </div>
   );

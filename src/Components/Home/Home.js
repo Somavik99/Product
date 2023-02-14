@@ -1,23 +1,38 @@
 // import { createStaticHandler } from "@remix-run/router";
 import axios from "axios";
 import React, { useEffect, useState } from "react";
-import { useNavigate } from "react-router-dom";
-
 import Cards from "../Cards/Cards";
-
-
+import NavBar from "../NavBar/NavBar";
 import "./Home.css";
-const Home = ({ handleClick }) => {
+
+const Home = () => {
+
   const [ProductsHome, setProductsHome] = useState([]);
-  const navigate = useNavigate();
+  const [cart, setCart] = useState([]);
+
+  const handleClick = (data) => {
+    let isPresent = false;
+    cart.forEach((product) => {
+      if (data.id === product.id) {
+        isPresent = true;
+      }
+    });
+    if (isPresent) {
+      return;
+    }
+    setCart([...cart, data]);
+    console.log(data);
+  };
+
   const productHandler = async () => {
     await axios
-      .get("https://dummyjson.com/products")
+      .get("https://api.escuelajs.co/api/v1/products")
       .then((resp) => {
-        setProductsHome(resp.data.products);
-        console.log(resp.data.products);
+        setProductsHome(resp.data);
       })
-      .catch((err) => console.log(err));
+      .catch((err) => {
+        console.log(err);
+      });
   };
 
   useEffect(() => {
@@ -26,20 +41,20 @@ const Home = ({ handleClick }) => {
 
   return (
     <div>
+      <NavBar size={cart.length} />
       <span className="prod">
         {ProductsHome.map((val, index) => {
           return (
             <div key={index} className="prod_contain">
-              {/* <>{val.id}</> */}
-
               <Cards
-                image={val.thumbnail}
+                data={val}
+                image={val.images}
+                pics={val.images[index]}
                 title={val.title}
                 price={val.price}
                 description={val.description}
                 handleClick={handleClick}
               />
-             
             </div>
           );
         })}

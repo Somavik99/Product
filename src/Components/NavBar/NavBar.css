@@ -11,6 +11,13 @@
     padding: 2px;
 }
 
+#header{
+    font-size: 30px;
+    background: -webkit-linear-gradient(#dc4a4a, #900606);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
 .nav_icon{
 display: flex;
 justify-content: flex-end;

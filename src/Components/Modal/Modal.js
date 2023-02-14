@@ -1,9 +1,13 @@
 import axios from "axios";
 import React, { useState } from "react";
 import { Button, Image, Modal, Icon, List } from "semantic-ui-react";
-import "./Modal.css"
+import "react-responsive-carousel/lib/styles/carousel.min.css"; // requires a loader
+// import { Carousel } from "react-responsive-carousel";
+import "./Modal.css";
+// import { Img } from "@chakra-ui/react";
+
 const PageMod = (props) => {
-  const { description, image, title, price } = props;
+  const { description, title, price, image } = props;
   const [open, setOpen] = React.useState(false);
   const [ModState, setModState] = useState({
     brand: "",
@@ -13,7 +17,7 @@ const PageMod = (props) => {
   });
   const prodData = async () => {
     await axios
-      .get(`https://dummyjson.com/products`)
+      .get(`https://api.escuelajs.co/api/v1/products`)
       .then((respo) => {
         // console.log(respo.data.products);
         setModState(respo.data.product);
@@ -43,14 +47,15 @@ const PageMod = (props) => {
       <Modal.Header>Product Details</Modal.Header>
       <Modal.Content image className="image">
         <Image size="large" src={image} wrapped />
-        <Modal.Description className="des">
-        </Modal.Description>
       </Modal.Content>
-      <List >
+      <List>
         <List.Item className="List">Name: {title}</List.Item>
         <List.Item className="List1">Price: ${price}</List.Item>
       </List>
-          <p className="para">{description}</p>
+      <Modal.Description className="des">
+        <p className="para">{description}</p>
+      </Modal.Description>
+
       <Modal.Actions>
         <Button onClick={() => setOpen(false)}>Cancel</Button>
         <Button onClick={() => setOpen(false)} positive>
