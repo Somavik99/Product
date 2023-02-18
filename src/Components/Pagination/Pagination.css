@@ -1,0 +1,51 @@
+
+
+.pagination {
+  margin-top: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: inherit;
+  height: inherit;
+}
+
+.pagination button {
+  margin: 50px;
+  /* margin-bottom: 50%; */
+  box-sizing: border-box;
+  border: 1px solid black;
+  outline: 1px solid black;
+  width: 40px;
+  height: 30px;
+  background: rgb(4, 9, 74);
+  transition: 0.1s ease-out;
+  /* position: fixed; */
+  z-index: 2;
+  border-radius: 2px;
+}
+
+.pagination button:hover {
+  transform: scale(1);
+  box-sizing: border-box;
+  outline: 1px solid black;
+  border: 1px solid black;
+  border-right: 5px;
+  border-bottom: 5px;
+  background: white;
+  color: black;
+  box-shadow: 5px 5px white;
+  border-radius: 3px;
+}
+
+.pagination button.active {
+  transform: scale(1);
+  box-sizing: border-box;
+  outline: 1px solid black;
+  border: 1px solid black;
+  border-right: 5px;
+  border-bottom: 5px;
+  background: white;
+  color: black;
+  box-shadow: 5px 5px white;
+  border-radius: 3px;
+}

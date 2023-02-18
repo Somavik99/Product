@@ -10,8 +10,8 @@ const NavBar = ({ size }) => {
   return (
     <div className="nav_cell">
       <h1 id="header">🛒Shoper's Home🛒</h1>
-      <div>
-        <span onClick={GoCart}>
+      <div onClick={GoCart}>
+        <span >
           <Icon name="add to cart" size="big" className="nav_icon" />
         </span>
         <span style={{color:"red"}}>{size}</span>

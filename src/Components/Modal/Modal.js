@@ -17,10 +17,10 @@ const PageMod = (props) => {
   });
   const prodData = async () => {
     await axios
-      .get(`https://api.escuelajs.co/api/v1/products`)
+      .get(`https://api.escuelajs.co/api/v1/products?limit=200&offset=0`)
       .then((respo) => {
         // console.log(respo.data.products);
-        setModState(respo.data.product);
+        setModState(respo.data);
       })
       .catch((err) => {
         console.log(err);

@@ -1,21 +1,18 @@
-@import url('https://fonts.googleapis.com/css2?family=Comfortaa&family=Montserrat&family=Nunito+Sans:wght@300&family=Sofia+Sans:wght@500&family=Ubuntu:wght@500&display=swap');
-*{
-    margin: 0;
-     padding: 0;
-     font-family: 'Comfortaa', cursive;
+@import url("https://fonts.googleapis.com/css2?family=Comfortaa&family=Montserrat&family=Nunito+Sans:wght@300&family=Sofia+Sans:wght@500&family=Ubuntu:wght@500&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  font-family: "Comfortaa", cursive;
 }
 
-
-
-.prod{
-    position: relative;
-    display: grid;
-    justify-content: center;
-    align-items: center;
-    grid-template-rows: repeat(8,1fr);
-    grid-template-columns: repeat(4,1fr);
-    margin: 15px;
-    
+.prod {
+  position: relative;
+  display: grid;
+  justify-content: center;
+  align-items: center;
+  grid-template-rows: repeat(5, 1fr);
+  grid-template-columns: repeat(4, 1fr);
+  margin: 3px;
 }
 
 /* .prod_contain{
@@ -37,32 +34,27 @@ background: #001e3c;
 border: 2px solid whitesmoke;
 } */
 
-
-
-
-
-.prod_title{
-    background: inherit;
+.prod_title {
+  background: inherit;
 }
 
-.prod_btn{
-    box-sizing: border-box;
-    outline: none;
-    border: 2px solid #021027;
-    border-radius: 50px ;
+.prod_btn {
+  box-sizing: border-box;
+  outline: none;
+  border: 2px solid #021027;
+  border-radius: 50px;
 }
 
-.btn{
-   
-    background: inherit;
-    color: black;
+.btn {
+  background: inherit;
+  color: black;
 }
-.icon{
-    background: inherit;
-    color: black;
+.icon {
+  background: inherit;
+  color: black;
 }
 
-@media screen and (max-width:600px) {
+/* @media screen and (max-width:600px) {
     .prod_contain{
        min-width: 100px;
         min-height: 100px;
@@ -72,4 +64,4 @@ border: 2px solid whitesmoke;
 min-width: 100px;
 min-height: 100px;
     }
-}
+} */

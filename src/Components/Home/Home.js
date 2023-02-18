@@ -5,9 +5,7 @@ import Cards from "../Cards/Cards";
 import NavBar from "../NavBar/NavBar";
 import "./Home.css";
 
-const Home = () => {
-
-  const [ProductsHome, setProductsHome] = useState([]);
+const Home = ({ ProductsHome, setProductsHome }) => {
   const [cart, setCart] = useState([]);
 
   const handleClick = (data) => {
@@ -26,9 +24,10 @@ const Home = () => {
 
   const productHandler = async () => {
     await axios
-      .get("https://api.escuelajs.co/api/v1/products")
+      .get("https://api.escuelajs.co/api/v1/products?limit=200&offset=0")
       .then((resp) => {
         setProductsHome(resp.data);
+        // console.log(resp.data)
       })
       .catch((err) => {
         console.log(err);
