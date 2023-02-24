@@ -1,32 +1,19 @@
 // import { createStaticHandler } from "@remix-run/router";
 import axios from "axios";
-import React, { useEffect, useState } from "react";
+import React, { useEffect } from "react";
+import { useContext } from "react";
 import Cards from "../Cards/Cards";
+import { Cartcontext } from "../Context/Context";
 import NavBar from "../NavBar/NavBar";
 import "./Home.css";
 
 const Home = ({ ProductsHome, setProductsHome }) => {
-  const [cart, setCart] = useState([]);
-
-  const handleClick = (data) => {
-    let isPresent = false;
-    cart.forEach((product) => {
-      if (data.id === product.id) {
-        isPresent = true;
-      }
-    });
-    if (isPresent) {
-      return;
-    }
-    setCart([...cart, data]);
-    console.log(data);
-  };
-
   const productHandler = async () => {
     await axios
-      .get("https://api.escuelajs.co/api/v1/products?limit=200&offset=0")
+      .get("https://api.escuelajs.co/api/v1/products?limit=350&offset=0")
       .then((resp) => {
         setProductsHome(resp.data);
+
         // console.log(resp.data)
       })
       .catch((err) => {
@@ -36,23 +23,28 @@ const Home = ({ ProductsHome, setProductsHome }) => {
 
   useEffect(() => {
     productHandler();
-  }, []);
+  },[]);
 
+  const Globalstate = useContext(Cartcontext);
+  const dispatch = Globalstate.dispatch;
+  console.log(Globalstate);
   return (
     <div>
-      <NavBar size={cart.length} />
+      <NavBar />
       <span className="prod">
-        {ProductsHome.map((val, index) => {
+        {ProductsHome.map((data, index) => {
+          data.quantity = 1;
           return (
             <div key={index} className="prod_contain">
               <Cards
-                data={val}
-                image={val.images}
-                pics={val.images[index]}
-                title={val.title}
-                price={val.price}
-                description={val.description}
-                handleClick={handleClick}
+                data={data}
+                brand={data.brand}
+                image={data.images}
+                title={data.title}
+                price={data.price}
+                description={data.description}
+                dispatch={dispatch}
+                ProductsHome={ProductsHome}
               />
             </div>
           );

@@ -1,31 +1,44 @@
-.image{
-    width:fit-content;
-    height:fit-content;
-    display: flex;
-    justify-content: center;
-    align-items: self-start;
+.image {
+  width: fit-content;
+  height: fit-content;
+  display: flex;
+  justify-content: center;
+  align-items: self-start;
+  padding: auto;
+  border-radius: 8px;
 }
 
-.para{
-    background: inherit;
-    color: black;
+.img {
+  box-shadow: 5px 5px 5px 5px rgb(195, 181, 181);
+  transition: 0.1s ease-out;
 }
 
-.des{
-    background: inherit;
-    
-    
+.img:hover {
+  transform: scale(1);
+  box-shadow: 8px 8px 8px 8px rgb(195, 181, 181);
+}
+.para {
+  background: inherit;
+  color: black;
 }
 
-.List{
-    background: white;
-    color: rgb(31, 255, 19);
+.des {
+  margin: 8px;
+  background: inherit;
 }
-.List1{
-    background: white;
-    color: rgb(251, 5, 5);
+
+.List {
+  border-radius: 5px;
+  margin-left: 8px;
+  background: white;
+  color: rgb(31, 588, 19);
 }
-.List2{
-    background: white;
-    color: rgb(111, 14, 159);
+.List1 {
+  margin-left: 8px;
+  background: white;
+  color: rgb(581, 8, 8);
+}
+.List5 {
+  background: white;
+  color: rgb(111, 14, 189);
 }

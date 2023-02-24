@@ -1,0 +1,64 @@
+.Cart {
+  display: grid;
+  justify-content: space-evenly;
+  align-items: self-start;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: repeat(1, 1fr);
+  margin: 5px;
+  padding: 5px;
+}
+.Cart_Content {
+  background: rgb(255, 253, 253);
+}
+.cart_img {
+  max-width: 50px;
+  max-height: 150px;
+}
+
+.Cart_header {
+  background: rgb(255, 253, 253);
+}
+
+.Cart_meta {
+  background: rgb(255, 253, 253);
+}
+
+.Cart_desc {
+  background: rgb(255, 253, 253);
+  overflow: hidden;
+}
+
+#btn_cart {
+  display: grid;
+  align-items: center;
+  justify-content: space-between;
+  grid-template-columns: repeat(3, 1fr);
+  margin-left: 15px;
+  background: rgb(255, 253, 253);
+}
+
+.cart_plus {
+  margin: 5px;
+  padding: 5px;
+  background: white;
+}
+
+.cart_minus {
+  margin-right: 10px;
+  padding: 5px;
+}
+
+.cart_P {
+  margin-left: 15px;
+  box-sizing: border-box;
+  border: 1px solid gainsboro;
+  width: 10px;
+}
+
+.btn_remv {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: white;
+  margin-right: 40px;
+}

@@ -17,7 +17,7 @@ const PageMod = (props) => {
   });
   const prodData = async () => {
     await axios
-      .get(`https://api.escuelajs.co/api/v1/products?limit=200&offset=0`)
+      .get(`https://api.escuelajs.co/api/v1/products?limit=250&offset=1`)
       .then((respo) => {
         // console.log(respo.data.products);
         setModState(respo.data);
@@ -44,9 +44,9 @@ const PageMod = (props) => {
         </Button>
       }
     >
-      <Modal.Header>Product Details</Modal.Header>
+      <Modal.Header>Product Info</Modal.Header>
       <Modal.Content image className="image">
-        <Image size="large" src={image} wrapped />
+        <Image size="large" src={image} wrapped className="img" />
       </Modal.Content>
       <List>
         <List.Item className="List">Name: {title}</List.Item>

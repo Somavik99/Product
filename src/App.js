@@ -6,7 +6,7 @@ import { CartProvider } from "react-use-cart";
 import { useState } from "react";
 import PaginationPage from "./Components/Pagination/Pagination";
 
-function App({ cart, setCart, image, title, price }) {
+function App({ cart, setCart, image, title, price, data }) {
   const [currentPage, setCurrentPage] = useState(1);
   const [postsPerPage, setPostsPerPage] = useState(20);
   const [ProductsHome, setProductsHome] = useState([]);
@@ -25,6 +25,10 @@ function App({ cart, setCart, image, title, price }) {
               <Home
                 ProductsHome={currentPosts}
                 setProductsHome={setProductsHome}
+                image={image}
+                title={title}
+                price={price}
+                data={data}
               />
             }
           />
@@ -38,6 +42,7 @@ function App({ cart, setCart, image, title, price }) {
                 image={image}
                 title={title}
                 price={price}
+                data={data}
               />
             }
           />

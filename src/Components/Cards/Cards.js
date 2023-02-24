@@ -4,7 +4,7 @@ import { Button } from "semantic-ui-react";
 import PageMod from "../Modal/Modal";
 import "./Cards.css";
 
-const Cards = ({ image, description, price, title, data, handleClick }) => {
+const Cards = ({ image, description, price, title, data, dispatch }) => {
   return (
     <div className="card">
       <Card className="card_contain">
@@ -17,7 +17,12 @@ const Cards = ({ image, description, price, title, data, handleClick }) => {
             title={title}
             price={price}
           />
-          <Button animated onClick={() => handleClick(data)}>
+          <Button
+            animated
+            onClick={() => {
+              dispatch({ type: "ADD", payload: data });
+            }}
+          >
             <Button.Content visible className="btn">
               Cart
             </Button.Content>

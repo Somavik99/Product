@@ -10,10 +10,22 @@
   border: none;
   outline: none;
   margin: 15px;
+  transition: smooth 1s ease-out;
 }
 
 .card_contain:hover {
+  background: rgb(255, 255, 255);
+  background: linear-gradient(
+    210deg,
+    rgba(255, 255, 255, 1) 0%,
+    rgba(255, 255, 255, 1) 5%,
+    rgba(255, 255, 255, 1) 5%,
+    rgba(255, 255, 255, 1) 25%,
+    rgba(255, 255, 255, 1) 40%,
+    rgba(95, 96, 96, 0.915) 90%
+  );
   cursor: pointer;
+  z-index: 2;
 }
 
 .card_para {

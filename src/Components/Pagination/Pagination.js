@@ -13,6 +13,7 @@ const PaginationPage = ({
 
   return (
     <div className="pagination">
+      <div className="page_style">
       {pages.map((page, index) => {
         return (
           <button
@@ -24,6 +25,7 @@ const PaginationPage = ({
           </button>
         );
       })}
+      </div>
     </div>
   );
 };
